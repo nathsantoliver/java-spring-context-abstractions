@@ -1,10 +1,10 @@
 package repositories;
 
 import model.Comment;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-// instruct Spring to instantiate the class and add an instance as a bean in its context
-@Component
+// define this object as a component having the responsibility of repository
+@Repository
 public class DBCommentRepository implements CommentRepository {
 
     @Override
