@@ -1,10 +1,11 @@
 package proxies;
 
 import model.Comment;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-// instruct Spring to instantiate the class and add an instance as a bean in its context
 @Component
+@Qualifier("EMAIL") // naming this implementation with EMAIL
 public class EmailCommentNotificationProxy implements CommentNotificationProxy {
 
     @Override
