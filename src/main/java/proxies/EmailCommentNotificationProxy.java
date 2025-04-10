@@ -1,6 +1,6 @@
-package main.proxies;
+package proxies;
 
-import main.model.Comment;
+import model.Comment;
 import org.springframework.stereotype.Component;
 
 // instruct Spring to instantiate the class and add an instance as a bean in its context

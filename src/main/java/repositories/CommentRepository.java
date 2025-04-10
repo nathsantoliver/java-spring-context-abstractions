@@ -1,6 +1,6 @@
-package main.repositories;
+package repositories;
 
-import main.model.Comment;
+import model.Comment;
 
 public interface CommentRepository {
 

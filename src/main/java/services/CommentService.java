@@ -1,8 +1,8 @@
-package main.services;
+package services;
 
-import main.model.Comment;
-import main.proxies.CommentNotificationProxy;
-import main.repositories.CommentRepository;
+import model.Comment;
+import proxies.CommentNotificationProxy;
+import repositories.CommentRepository;
 import org.springframework.stereotype.Component;
 
 @Component  // Spring creates a bean of this class and adds it to its context.

@@ -1,6 +1,6 @@
-package main.proxies;
+package proxies;
 
-import main.model.Comment;
+import model.Comment;
 
 public interface CommentNotificationProxy {
 

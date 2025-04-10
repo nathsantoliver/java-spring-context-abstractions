@@ -1,28 +1,21 @@
 package main;
 
-import main.model.Comment;
-import main.proxies.EmailCommentNotificationProxy;
-import main.repositories.DBCommentRepository;
-import main.services.CommentService;
+import configuration.ProjectConfiguration;
+import model.Comment;
+import services.CommentService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        // 1. creates the instance for the dependencies
-        var commentRepository = new DBCommentRepository();
-        var commentNotificationProxy = new EmailCommentNotificationProxy();
 
-        // 2. creates the instance of the service class and providing the dependencies
-        var commentService = new CommentService(commentRepository, commentNotificationProxy);
+        var context = new AnnotationConfigApplicationContext(ProjectConfiguration.class);
 
-        // 3. creates an instance of comment to send as a parameter to the publish comment use case
         var comment = new Comment();
         comment.setAuthor("Laurentiu");
-
-        // 4. calls the publish comment use case
         comment.setText("Demo comment");
 
+        var commentService = context.getBean(CommentService.class);
         commentService.publishComment(comment);
-
 
     }
 }
